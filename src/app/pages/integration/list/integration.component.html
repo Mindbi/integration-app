@@ -1,0 +1,26 @@
+<nz-table #basicTable [nzData]="listOfData">
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Tipo</th>
+      <th>Data de criação</th>
+      <th>Última sincronização</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of listOfData">
+      <td>{{ data.client }}</td>
+      <td><img class="logo" [src]="data.type"></td>
+      <td>{{ data.createdAt }}</td>
+      <td>{{ data.updatedAt }}</td>
+      <td>
+        <button nz-button nzType="default" nzSize="large"><i nz-icon nzType="edit"></i></button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="default" nzSize="large"><i nz-icon nzType="sync"></i></button>
+        <nz-divider nzType="vertical"></nz-divider>
+        <button nz-button nzType="default" nzSize="large"><i nz-icon nzType="pause"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
